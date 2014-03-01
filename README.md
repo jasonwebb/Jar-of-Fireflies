@@ -8,7 +8,7 @@ Mason jars outfitted with LEDs and a small microcontroller programmed to mimic t
 * ATTiny85 microcontroller mounted with a DIP IC socket, so it can be easily removed and reprogrammed externally using HLT's Arduino bootloader (see http://hlt.media.mit.edu/?p=1695).
 * Six charlieplexed LEDs (with the option to use SMD LEDs with fancy soldering).
 * Piezo sensor to detect tapping for interaction.
-* 2-pin header for power, so external breakout boards for various power options can be added (DC barrel jack, USB mini-B, 2xAA batteries and solar cell).
+* Three ways to connect power to the board - standard 2.1mm DC jack for wall adapters, 2-pin JST for batteries, 2-pin screw terminal for raw wires and 2-pin male header for female jumper wires.
 * Contacts for alligator clips so multiple jars can be daisychained to a single power source.
 
 ## More information
