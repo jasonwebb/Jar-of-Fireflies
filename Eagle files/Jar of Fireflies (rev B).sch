@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -4114,7 +4114,9 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 In this library you'll find non-functional items- supply symbols, logos, notations, frame blocks, etc.&lt;br&gt;&lt;br&gt;
 We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
 &lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
 <package name="OSHW-LOGO-S">
 <polygon width="0.15" layer="21">
@@ -7832,16 +7834,15 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="LED4" library="SparkFun" deviceset="LED" device="5MM"/>
 <part name="LED5" library="SparkFun" deviceset="LED" device="5MM"/>
 <part name="LED6" library="SparkFun" deviceset="LED" device="5MM"/>
-<part name="R1" library="resistor" deviceset="R-US_" device="0207/2V" value="100"/>
-<part name="R2" library="resistor" deviceset="R-US_" device="0204/7" value="100"/>
-<part name="R3" library="resistor" deviceset="R-US_" device="0207/2V" value="100"/>
+<part name="R1" library="resistor" deviceset="R-US_" device="0207/2V" value="150"/>
+<part name="R2" library="resistor" deviceset="R-US_" device="0204/7" value="150"/>
+<part name="R3" library="resistor" deviceset="R-US_" device="0207/2V" value="150"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="J1" library="SparkFun-Connectors" deviceset="POWER_JACK" device="PTH"/>
 <part name="J2" library="SparkFun-Connectors" deviceset="JST_2MM_MALE" device=""/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="CAP_POL" device="PTH2" value="10uF"/>
-<part name="J3" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
-<part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="L" value="OSHW-LOGOL"/>
-<part name="J4" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
+<part name="J3" library="SparkFun-Connectors" deviceset="M02" device="2.54MM_SCREWTERM"/>
+<part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="L"/>
 </parts>
 <sheets>
 <sheet>
@@ -7870,7 +7871,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="C1" gate="G$1" x="81.28" y="114.3"/>
 <instance part="J3" gate="G$1" x="60.96" y="91.44"/>
 <instance part="LOGO1" gate="G$1" x="132.08" y="12.7"/>
-<instance part="J4" gate="G$1" x="60.96" y="76.2"/>
 </instances>
 <busses>
 </busses>
@@ -7895,13 +7895,9 @@ We've spent an enormous amount of time creating and checking these footprints an
 <junction x="81.28" y="106.68"/>
 <pinref part="C1" gate="G$1" pin="-"/>
 <wire x1="81.28" y1="106.68" x2="81.28" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="2"/>
 <wire x1="68.58" y1="93.98" x2="71.12" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="93.98" x2="71.12" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="93.98" x2="71.12" y2="78.74" width="0.1524" layer="91"/>
-<junction x="71.12" y="93.98"/>
-<pinref part="J4" gate="G$1" pin="2"/>
-<wire x1="71.12" y1="78.74" x2="68.58" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="J3" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="129.54" y1="96.52" x2="129.54" y2="93.98" width="0.1524" layer="91"/>
@@ -7948,13 +7944,9 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pinref part="C1" gate="G$1" pin="+"/>
 <wire x1="81.28" y1="116.84" x2="81.28" y2="119.38" width="0.1524" layer="91"/>
 <junction x="81.28" y="119.38"/>
-<pinref part="J3" gate="G$1" pin="1"/>
 <wire x1="68.58" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="91.44" x2="73.66" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="1"/>
-<wire x1="68.58" y1="76.2" x2="73.66" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="76.2" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
-<junction x="73.66" y="91.44"/>
+<pinref part="J3" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB5(NRES)"/>
