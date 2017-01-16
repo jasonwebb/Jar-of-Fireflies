@@ -3,8 +3,6 @@ Jar of Fireflies using ATTiny85
 Author: Jason Webb
 Author website: http://jason-webb.info
 Author e-mail: zen.webb@gmail.com
-
-Project wiki: http://jason-webb.info/wiki/index.php?title=Jar_of_Fireflies
 Github repo: https://github.com/jasonwebb/Jar-of-Fireflies
 
 GENERAL DESCRIPTION:
