@@ -1,3 +1,7 @@
+---
+WARNING: This project is currently being updated. The board designs need to be physically prototyped, and the current firmware sketch is not guaranteed to work correctly with the latest board design. Use with caution!
+---
+
 # Jar of Fireflies
 
 Mason jars outfitted with LEDs and a small microcontroller programmed to mimic the behavior of fireflies caught on a warm summer night. A gentle tap on the glass catches the attention of a piezo element, startling the lights and causing them to rapidly flash for a moment before returning to their blissful natural state.
