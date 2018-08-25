@@ -1,3 +1,3 @@
-![Schematic](renders/Jar of Fireflies - schematic.png)
+![Schematic](https://raw.githubusercontent.com/jasonwebb/Jar-of-Fireflies/master/hardware/renders/Jar%20of%20Fireflies%20-%20schematic.png)
 
-![PCB layout](renders/Jar of Fireflies - board.png)
+![PCB layout](https://raw.githubusercontent.com/jasonwebb/Jar-of-Fireflies/master/hardware/renders/Jar%20of%20Fireflies%20-%20board.png)
