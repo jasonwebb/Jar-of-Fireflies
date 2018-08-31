@@ -1,0 +1,15 @@
+ID,Name,Purpose,Qty,Cost @ 1,Cost @ 25,Cost @ 50,Cost @ 100,Total @ 1,Total @ 25,Total @ 50,Total @ 100,Part number,URL
+IC1,ATTINY85-20PU-ND,Microcontroller,1,$1.24,$1.33,$1.33,$1.03,$1.24,$1.33,$1.33,$1.03,ATTINY85-20PU-ND,https://www.digikey.com/product-detail/en/microchip-technology/ATTINY85-20PU/ATTINY85-20PU-ND/735469
+,8-pin DIP IC socket,Holds ATTiny85,1,$0.18,$0.15,$0.15,$0.13,$0.18,$0.15,$0.15,$0.13,AE9986-ND,https://www.digikey.com/product-detail/en/assmann-wsw-components/A-08-LC-TT/AE9986-ND/821740
+C1,10uF 50V aluminum capacitor,Power smoothing,1,$0.23,$0.15,$0.15,$0.08,$0.23,$0.15,$0.15,$0.08,P10425CT-ND,https://www.digikey.com/product-detail/en/panasonic-electronic-components/ECA-1HM100I/P10425CT-ND/8603345
+R1-R3,"150ohm, 1/4W resistor",Current limits for LEDs,3,$0.10,$0.03,$0.02,$0.02,$0.30,$0.09,$0.07,$0.05,CF14JT150RCT-ND,https://www.digikey.com/product-detail/en/stackpole-electronics-inc/CF14JT150R/CF14JT150RCT-ND/1830603
+R4,"1M, 1/4W resistor",Piezo drain,1,$0.10,$0.03,$0.02,$0.02,$0.10,$0.03,$0.02,$0.02,CF14JT1M00CT-ND,https://www.digikey.com/product-detail/en/stackpole-electronics-inc/CF14JT1M00/CF14JT1M00CT-ND/1830423
+LED1-6,"Amber LED, 2.1V @ 20mA, 5mm",Fireflies,6,$0.28,$0.28,$0.28,$0.25,$1.68,$1.68,$1.68,$1.49,C566C-AFF-CU0W0252CT-ND,https://www.digikey.com/product-detail/en/cree-inc/C566C-AFF-CU0W0252/C566C-AFF-CU0W0252CT-ND/7666543
+J1,3.5mm DC power jack,Wall and solar power,1,$0.78,$0.65,$0.62,$0.59,$0.78,$0.65,$0.62,$0.59,CP-006A-ND,https://www.digikey.com/product-detail/en/cui-inc/PJ-006A/CP-006A-ND/269296
+J2,2-pin JST PH vertical jack,Battery pack input,1,$0.17,$0.16,$0.16,$0.10,$0.17,$0.16,$0.16,$0.10,455-1704-ND,https://www.digikey.com/products/en?mpart=B2B-PH-K-S%28LF%29%28SN%29&v=455
+J3,"3-pin 0.1"" male header",Sensor interface,1,$0.13,$0.09,$0.07,$0.07,$0.13,$0.09,$0.07,$0.07,732-5316-ND,https://www.digikey.com/product-detail/en/wurth-electronics-inc/61300311121/732-5316-ND/4846825
+J4,"2x3-pin 0.1"" male header",ICSP interface,1,,,,,$0.00,$0.00,$0.00,$0.00,Not to be permanently soldered to board - just press-fit into ICSP plug,
+PIEZO,Piezo element,Trigger for 'dance' mode,1,$0.98,$0.71,$0.67,$0.62,$0.98,$0.71,$0.67,$0.62,445-172991-ND,https://www.digikey.com/product-detail/en/tdk-corporation/PS1550L40N/445-172991-ND/5244592
+S1,Momentary switch,Manual trigger for 'dance' mode,1,$0.01,$0.10,$0.10,$0.09,$0.01,$0.10,$0.10,$0.09,450-1804-ND,https://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414
+,,,,,,,,,,,,,
+,,,,,,,Total,$5.80,$5.14,$5.02,$4.26,,
