@@ -183,7 +183,6 @@
 <hole x="66.548" y="29.21" drill="3.2"/>
 <hole x="66.548" y="24.892" drill="3.2"/>
 <text x="44.788684375" y="55.11835625" size="1.27" layer="27" font="vector" ratio="12" rot="R90">10uF</text>
-<text x="91.186" y="42.418" size="1.778" layer="52">Silkscreen artwork is on layer 200</text>
 <wire x1="22.352" y1="54.864" x2="20.828" y2="54.864" width="0.254" layer="21"/>
 <wire x1="20.828" y1="54.864" x2="20.828" y2="54.356" width="0.254" layer="21"/>
 <wire x1="20.828" y1="54.356" x2="20.066" y2="54.356" width="0.254" layer="21"/>
@@ -2621,45 +2620,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 </package>
 </packages>
 </library>
-<library name="SparkFun-Electromechanical">
-<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
-In this library you'll find anything that moves- switches, relays, buttons, potentiometers. Also, anything that goes on a board but isn't electrical in nature- screws, standoffs, etc.&lt;br&gt;&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
-&lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="TACTILE-PTH">
-<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
-<wire x1="3.048" y1="1.016" x2="3.048" y2="2.54" width="0.2032" layer="51"/>
-<wire x1="3.048" y1="2.54" x2="2.54" y2="3.048" width="0.2032" layer="51"/>
-<wire x1="2.54" y1="-3.048" x2="3.048" y2="-2.54" width="0.2032" layer="51"/>
-<wire x1="3.048" y1="-2.54" x2="3.048" y2="-1.016" width="0.2032" layer="51"/>
-<wire x1="-2.54" y1="3.048" x2="-3.048" y2="2.54" width="0.2032" layer="51"/>
-<wire x1="-3.048" y1="2.54" x2="-3.048" y2="1.016" width="0.2032" layer="51"/>
-<wire x1="-2.54" y1="-3.048" x2="-3.048" y2="-2.54" width="0.2032" layer="51"/>
-<wire x1="-3.048" y1="-2.54" x2="-3.048" y2="-1.016" width="0.2032" layer="51"/>
-<wire x1="2.54" y1="-3.048" x2="2.159" y2="-3.048" width="0.2032" layer="51"/>
-<wire x1="-2.54" y1="-3.048" x2="-2.159" y2="-3.048" width="0.2032" layer="51"/>
-<wire x1="-2.54" y1="3.048" x2="-2.159" y2="3.048" width="0.2032" layer="51"/>
-<wire x1="2.54" y1="3.048" x2="2.159" y2="3.048" width="0.2032" layer="51"/>
-<wire x1="2.159" y1="3.048" x2="-2.159" y2="3.048" width="0.2032" layer="21"/>
-<wire x1="-2.159" y1="-3.048" x2="2.159" y2="-3.048" width="0.2032" layer="21"/>
-<wire x1="3.048" y1="0.998" x2="3.048" y2="-1.016" width="0.2032" layer="21"/>
-<wire x1="-3.048" y1="1.028" x2="-3.048" y2="-1.016" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="1.27" x2="-2.54" y2="0.508" width="0.2032" layer="51"/>
-<wire x1="-2.54" y1="-0.508" x2="-2.54" y2="-1.27" width="0.2032" layer="51"/>
-<wire x1="-2.54" y1="0.508" x2="-2.159" y2="-0.381" width="0.2032" layer="51"/>
-<circle x="0" y="0" radius="1.778" width="0.2032" layer="21"/>
-<pad name="1" x="-3.2512" y="2.2606" drill="1.016" diameter="1.8796"/>
-<pad name="2" x="3.2512" y="2.2606" drill="1.016" diameter="1.8796"/>
-<pad name="3" x="-3.2512" y="-2.2606" drill="1.016" diameter="1.8796"/>
-<pad name="4" x="3.2512" y="-2.2606" drill="1.016" diameter="1.8796"/>
-<text x="-2.54" y="3.81" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-</package>
-</packages>
-</library>
 <library name="wirepad">
 <description>&lt;b&gt;Single Pads&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -2717,6 +2677,31 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pad name="1" x="0" y="0" drill="1" diameter="2.25" shape="long"/>
 <pad name="2" x="-5.5" y="-2.95" drill="1" diameter="2" shape="long" rot="R90"/>
 <pad name="3" x="-2.8" y="-5.55" drill="1" diameter="2" shape="long" rot="R90"/>
+</package>
+</packages>
+</library>
+<library name="1825910-7">
+<packages>
+<package name="SW_1825910-7">
+<wire x1="-3" y1="-3" x2="-3" y2="3" width="0.127" layer="51"/>
+<wire x1="-3" y1="3" x2="3" y2="3" width="0.127" layer="51"/>
+<wire x1="3" y1="3" x2="3" y2="-3" width="0.127" layer="51"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.127" layer="51"/>
+<wire x1="-2" y1="3" x2="2" y2="3" width="0.127" layer="21"/>
+<wire x1="3" y1="1" x2="3" y2="-1" width="0.127" layer="21"/>
+<wire x1="-2" y1="-3" x2="2" y2="-3" width="0.127" layer="21"/>
+<wire x1="-3" y1="1" x2="-3" y2="-1" width="0.127" layer="21"/>
+<wire x1="-4.25" y1="3.25" x2="4.25" y2="3.25" width="0.05" layer="39"/>
+<wire x1="4.25" y1="3.25" x2="4.25" y2="-3.25" width="0.05" layer="39"/>
+<wire x1="4.25" y1="-3.25" x2="-4.25" y2="-3.25" width="0.05" layer="39"/>
+<wire x1="-4.25" y1="-3.25" x2="-4.25" y2="3.25" width="0.05" layer="39"/>
+<circle x="-4.369" y="2.25" radius="0.1" width="0.2" layer="21"/>
+<text x="-3.511090625" y="3.511090625" size="1.27403125" layer="25">&gt;NAME</text>
+<text x="-3.502409375" y="-4.75326875" size="1.27086875" layer="27">&gt;VALUE</text>
+<pad name="1" x="-3.25" y="2.25" drill="0.99"/>
+<pad name="2" x="3.25" y="2.25" drill="0.99"/>
+<pad name="3" x="-3.25" y="-2.25" drill="0.99"/>
+<pad name="4" x="3.25" y="-2.25" drill="0.99"/>
 </package>
 </packages>
 </library>
@@ -2965,9 +2950,6 @@ design rules under a new name.</description>
 <element name="C1" library="SparkFun-Capacitors" package="CPOL-RADIAL-10UF-25V" value="10uF" x="40.64" y="57.404353125" smashed="yes">
 <attribute name="NAME" x="37.592" y="56.515353125" size="1.27" layer="25" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="S1" library="SparkFun-Electromechanical" package="TACTILE-PTH" value="" x="40.809340625" y="17.94934375" smashed="yes" rot="MR0">
-<attribute name="PROD_ID" value=" SWCH-08441" x="40.809340625" y="17.94934375" size="1.778" layer="28" rot="MR0" display="off"/>
-</element>
 <element name="PAD1" library="wirepad" package="SMD1,27-2,54" value="" x="23.622" y="52.832" smashed="yes" rot="R270">
 <attribute name="VALUE" x="23.622" y="52.832" size="0.0254" layer="27" rot="R270"/>
 </element>
@@ -3019,6 +3001,20 @@ design rules under a new name.</description>
 <attribute name="STANDARD" value="Manufacturer recommendations" x="36.069803125" y="65.704625" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 <element name="J2" library="SparkFun-Connectors" package="JST-2-PTH-VERT" value="" x="51.64924375" y="66.551328125" rot="MR270"/>
+<element name="S1" library="1825910-7" package="SW_1825910-7" value="1825910-7" x="40.64203125" y="17.950234375" smashed="yes" rot="R180">
+<attribute name="COMMENT" value="1825910-7" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CONFIGURATION_POLE-THROW" value="Single Pole - Single Throw" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CONTACT_CURRENT_RATING" value="50 mA" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" FSM4JAH=6MM TACT SWITCH, HIGH TEMP " x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGI-KEY_PART_NUMBER" value="450-1804-ND" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGI-KEY_PURCHASE_URL" value="https://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414?utm_source=snapeda&amp;utm_medium=aggregator&amp;utm_campaign=symbol" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="EU_ROHS_COMPLIANCE" value="Compliant" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="LINK" value="http://www.te.com/usa-en/product-1825910-7.html" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="TE Connectivity" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="1825910-7" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="41.612996875" y="18.503346875" size="1.27403125" layer="25" rot="R180"/>
+<attribute name="PACKAGE" value="None" x="40.64203125" y="17.950234375" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -3122,7 +3118,6 @@ design rules under a new name.</description>
 <contactref element="C1" pad="1"/>
 <via x="61.976" y="29.21" extent="1-16" drill="3.2"/>
 <via x="66.548" y="24.892" extent="1-16" drill="3.2"/>
-<via x="61.976" y="24.892" extent="1-16" drill="3.2"/>
 <polygon width="0.254" layer="1">
 <vertex x="66.626003125" y="22.180446875" curve="90"/>
 <vertex x="69.335065625" y="24.889509375"/>
@@ -3145,11 +3140,6 @@ design rules under a new name.</description>
 <vertex x="59.17608125" y="24.6355375" curve="90"/>
 <vertex x="61.631171875" y="22.180446875"/>
 </polygon>
-<contactref element="S1" pad="3"/>
-<wire x1="61.976" y1="24.892" x2="61.976" y2="18.79384375" width="0.4064" layer="1"/>
-<wire x1="61.976" y1="18.79384375" x2="58.761603125" y2="15.579446875" width="0.4064" layer="1" curve="-90"/>
-<wire x1="58.761603125" y1="15.579446875" x2="44.1698375" y2="15.579446875" width="0.4064" layer="1"/>
-<wire x1="44.1698375" y1="15.579446875" x2="44.060540625" y2="15.68874375" width="0.4064" layer="1" curve="-90"/>
 <contactref element="J4" pad="2"/>
 <wire x1="43.182290625" y1="51.9878" x2="43.182421875" y2="51.98793125" width="0.8128" layer="16" curve="-90"/>
 <contactref element="R5" pad="2"/>
@@ -3176,6 +3166,12 @@ design rules under a new name.</description>
 <wire x1="52.045946875" y1="65.704625" x2="52.19924375" y2="65.551328125" width="0.8128" layer="16" curve="-90"/>
 <wire x1="66.548228125" y1="48.916953125" x2="66.548228125" y2="51.20234375" width="0.8128" layer="16"/>
 <wire x1="66.548228125" y1="51.20234375" x2="52.19924375" y2="65.551328125" width="0.8128" layer="16" curve="90"/>
+<contactref element="S1" pad="1"/>
+<contactref element="S1" pad="2"/>
+<via x="61.976" y="24.807115625" extent="1-16" drill="3.2"/>
+<wire x1="37.39203125" y1="15.700234375" x2="43.89203125" y2="15.700234375" width="0.4064" layer="16"/>
+<wire x1="43.89203125" y1="15.700234375" x2="52.86911875" y2="15.700234375" width="0.4064" layer="16"/>
+<wire x1="52.86911875" y1="15.700234375" x2="61.976" y2="24.807115625" width="0.4064" layer="16" curve="90"/>
 <wire x1="43.182159375" y1="51.987803125" x2="43.182290625" y2="51.9878" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="SCK">
@@ -3186,13 +3182,23 @@ design rules under a new name.</description>
 <wire x1="40.642159375" y1="49.193803125" x2="40.642159375" y2="45.717840625" width="0.4064" layer="16"/>
 <wire x1="40.642159375" y1="45.717840625" x2="44.45" y2="41.91" width="0.4064" layer="16" curve="90"/>
 </signal>
-<signal name="PIEZO">
+<signal name="DANCE">
 <contactref element="IC1" pad="3"/>
 <wire x1="36.83" y1="39.37" x2="39.62598125" y2="36.57401875" width="0.4064" layer="16" curve="-90"/>
 <wire x1="39.62598125" y1="36.57401875" x2="39.62598125" y2="33.69901875" width="0.4064" layer="16"/>
 <wire x1="39.62598125" y1="33.69901875" x2="41.827425" y2="31.497575" width="0.4064" layer="16" curve="90"/>
-<wire x1="41.827425" y1="31.497575" x2="44.448425" y2="31.497575" width="0.4064" layer="16"/>
-<wire x1="41.91" y1="31.415" x2="41.827425" y2="31.497575" width="0.4064" layer="16" curve="90"/>
+<wire x1="44.448425" y1="31.497575" x2="41.827425" y2="31.497575" width="0.4064" layer="16"/>
+<contactref element="S1" pad="4"/>
+<contactref element="S1" pad="3"/>
+<wire x1="37.39203125" y1="20.200234375" x2="43.89203125" y2="20.200234375" width="0.4064" layer="16"/>
+<wire x1="43.89203125" y1="20.200234375" x2="44.448425" y2="20.756628125" width="0.4064" layer="16" curve="90"/>
+<wire x1="44.448425" y1="20.756628125" x2="44.448425" y2="26.0786375" width="0.4064" layer="16"/>
+<contactref element="PIEZO" pad="2"/>
+<contactref element="R4" pad="2"/>
+<wire x1="44.448425" y1="26.0786375" x2="44.448425" y2="31.497575" width="0.4064" layer="16"/>
+<wire x1="41.91" y1="25.992709375" x2="41.995928125" y2="26.0786375" width="0.4064" layer="16" curve="-90"/>
+<wire x1="41.995928125" y1="26.0786375" x2="44.448425" y2="26.0786375" width="0.4064" layer="16"/>
+<wire x1="44.448425" y1="31.497575" x2="44.45" y2="31.496" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="B">
 <contactref element="R2" pad="2"/>
@@ -3323,16 +3329,6 @@ design rules under a new name.</description>
 <wire x1="31.497575" y1="56.729503125" x2="28.95745" y2="59.269628125" width="0.4064" layer="16" curve="-90"/>
 <wire x1="28.95745" y1="59.269628125" x2="28.95745" y2="64.01120625" width="0.4064" layer="16"/>
 <wire x1="33.19099375" y1="42.504790625" x2="33.19099375" y2="55.036084375" width="0.4064" layer="16"/>
-</signal>
-<signal name="N$2">
-<contactref element="PIEZO" pad="2"/>
-<contactref element="R4" pad="2"/>
-<contactref element="S1" pad="1"/>
-<wire x1="41.91" y1="22.0218" x2="41.91" y2="25.992709375" width="0.4064" layer="16"/>
-<wire x1="44.060540625" y1="20.20994375" x2="43.72185625" y2="20.20994375" width="0.4064" layer="16"/>
-<wire x1="43.72185625" y1="20.20994375" x2="41.91" y2="22.0218" width="0.4064" layer="16" curve="-90"/>
-<wire x1="41.91" y1="25.992709375" x2="44.45" y2="28.532709375" width="0.4064" layer="16" curve="90"/>
-<wire x1="44.45" y1="28.532709375" x2="44.45" y2="31.496" width="0.4064" layer="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
