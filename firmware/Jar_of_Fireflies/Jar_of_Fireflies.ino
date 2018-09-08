@@ -1,125 +1,121 @@
 /*
-Jar of Fireflies using ATTiny85
-Author: Jason Webb
-Author website: http://jason-webb.info
-Author e-mail: zen.webb@gmail.com
-Github repo: https://github.com/jasonwebb/Jar-of-Fireflies
+  Jar of Fireflies using ATTiny85
 
-GENERAL DESCRIPTION:
-An Arduino sketch for the ATTiny85 (using HLT's bootloader)
-that flashes six charlieplexed LEDs to mimic the behavior of
-fireflies. Using a piezo detector, the LED array can react to 
-taps on the enclosure.
+  DESCRIPTION:
+    An Arduino sketch for the ATTiny85 (using HLT's bootloader)
+    that flashes six charlieplexed LEDs to mimic the behavior of
+    fireflies. Using a piezo element and tactile button in parallel
+    the LED array can react to human interactions.
 */
 
 // Pin assignments
-const byte pinA = 0;
-const byte pinB = 1;
-const byte pinC = 2;
-const byte piezoPin = 2;  // analog pin 2
+const byte pinA = 0;        // Physical pin 5 (PB0, MOSI, PWM)
+const byte pinB = 1;        // Physical pin 6 (PB1, MISO, PWM)
+const byte pinC = 2;        // Physical pin 7 (PB2, SCK, ADC1)
+const byte triggerPin = 4;  // Physical pin 3 (ADC2)
 
 // LED variables
-byte currentLED;
-byte previousLED = -1;
-byte rampUpSpeed;
-byte rampDownSpeed;
-byte numBlinks;
-int counter;
+byte currentLED;        // Number of currently active LED (1-6)
+byte previousLED = -1;  // Last LED flashed so we can avoid flashing it twice in a row
+byte rampUpSpeed;       // Randomly generated value for fading in LEDs
+byte rampDownSpeed;     // Randomly generated value for fading out LEDs
+byte numBlinks;         // Randomly generated value for number of times to flash LED whe fully faded in
+int brightness;         // Current brightness (0-255) of currently active LED
 
-// Piezo variables
-const int piezoBufferSize = 10;
-int piezoValues[piezoBufferSize];
-int piezoThreshold = 1;
-int piezoCounter = 0;
+// "Dance mode" trigger variables
+const int triggerBufferSize = 10;      // Number of readings to store
+int triggerValues[triggerBufferSize];  // Last n values of triggers
+int triggerThreshold = 1;              // Minimum average value to trigger "dance mode"
+int triggerCounter = 0;                // Current index in buffer array, used when filling it with readings
 
-// Behavior states
-const byte BEGIN = 0;
-const byte RAMP_UP = 1;
-const byte BLINKING = 2;
-const byte RAMP_DOWN = 3;
-const byte EXCITED = 4;
-byte CURRENT_ACTION = BEGIN;
+// Program states
+const byte BEGIN = 0;         // Sets up program for a new cycle
+const byte RAMP_UP = 1;       // Fades in current LED
+const byte BLINKING = 2;      // Blinks the current LED when at full brightness
+const byte RAMP_DOWN = 3;     // Fades out the current LED
+const byte DANCE = 4;         // Flashes LEDs in fun pattern
+byte CURRENT_ACTION = BEGIN;  // Start program off in BEGIN mode
 
 void setup() {
-  // Flush any stray current from the ports
-  turnOffAll();
+  turnOffAll();  // Flush any stray current from the ports
 }
 
 void loop() {
-  switch(CURRENT_ACTION) {
-    
-    // BEGIN =========================================
-    // + Set up all the variables to flash new LED
+  switch (CURRENT_ACTION) {
+
+    // BEGIN ===========================================
+    // Set up all the variables to flash a new LED
     case BEGIN:
       // Choose a new LED
       previousLED = currentLED;
-      
+
+      // Make sure it's different than the last one
       do {
-        currentLED = (int)random(1,6);
-      } while(currentLED == previousLED);
-      
-      // Number of times to blink
-      numBlinks = (int)random(1,6);
-      
-      // Fade in and fade out speed
+        currentLED = (int) random(1, 6);
+      } while (currentLED == previousLED);
+
+      // Randomize the number of times to blink
+      numBlinks = (int) random(1, 6);
+
+      // Randomize the fade in and fade out speeds
       rampUpSpeed = random(6);
-      rampDownSpeed = rampUpSpeed*2;
-      
-      counter = 0;
+      rampDownSpeed = rampUpSpeed * 2;
+
+      brightness = 0;
       CURRENT_ACTION = RAMP_UP;
       break;
-      
+
     // RAMP UP ========================================
-    // + Fade in the LED
+    // Fade in the LED
     case RAMP_UP:
-      analogOn(currentLED, counter);
+      analogOn(currentLED, brightness);
       delay(rampUpSpeed);
-      
-      if(counter >= 255) {
+
+      if (brightness >= 255) {
         CURRENT_ACTION = BLINKING;
-        counter = 0;
+        brightness = 0;
       } else {
-        counter++;
+        brightness++;
       }
-      
+
       break;
-      
+
     // BLINKING ====================================
-    // + Blink the LED a certain number of times
+    // Blink the LED a certain number of times
     case BLINKING:
       analogOn(currentLED, 0);
-      delay(random(10,50));
+      delay(random(10, 50));
       analogOn(currentLED, 255);
-      delay(random(30,100));
-      
-      if(numBlinks > 0) {
+      delay(random(30, 100));
+
+      if (numBlinks > 0) {
         numBlinks--;
       } else {
         CURRENT_ACTION = RAMP_DOWN;
-        counter = 255;
+        brightness = 255;
       }
-      
+
       break;
-      
+
     // RAMP DOWN ===========================================
-    // + Fade out the LED
+    // Fade out the LED
     case RAMP_DOWN:
-      analogOn(currentLED, counter);
+      analogOn(currentLED, brightness);
       delay(rampDownSpeed);
-      
-      if(counter == 0) {
+
+      if (brightness == 0) {
         CURRENT_ACTION = BEGIN;
       } else {
-        counter--;
+        brightness--;
       }
-      
+
       break;
-      
-    // EXCITED =========================================
-    // + Flash each LED, one at a time, six times in a row
-    case EXCITED:
-      for(int j=0; j<6; j++) {
-        for(int i=1; i<=6; i++) {
+
+    // DANCE ==============================================
+    // Flash each LED, one at a time, six times in a row
+    case DANCE:
+      for (int j = 0; j < 6; j++) {
+        for (int i = 1; i <= 6; i++) {
           turnOn(i);
           delay(50);
           turnOff(i);
@@ -127,12 +123,18 @@ void loop() {
         }
       }
 
+      // Clear the trigger value buffer so dance mode isn't immediately retriggered
+      for(int i = 0; i < triggerBufferSize; i++) {
+        triggerValues[i] = 0;
+      }
+
       CURRENT_ACTION = BEGIN;
 
       break;
   }
-  
-  checkPiezo();
+
+  // Poll the "dance mode" triggers
+  checkDanceTriggers();
 }
 
 // Turn on a single LED to full brightness
@@ -145,8 +147,9 @@ void turnOff(byte led) {
   analogOn(led, 0);
 }
 
+// Turn off all LEDs and drain any remaining current
 void turnOffAll() {
-  for(int i=0; i<=2; i++) {
+  for (int i = 0; i <= 2; i++) {
     pinMode(i, OUTPUT);
     digitalWrite(i, LOW);
   }
@@ -154,12 +157,12 @@ void turnOffAll() {
 
 // Write an analog value to an LED
 void analogOn(byte led, byte value) {
-  switch(led) {
+  switch (led) {
     case 1:
       pinMode(pinA, OUTPUT);
       pinMode(pinB, OUTPUT);
       pinMode(pinC, INPUT);
-      
+
       digitalWrite(pinA, LOW);
       analogWrite(pinB, value);
       break;
@@ -167,7 +170,7 @@ void analogOn(byte led, byte value) {
       pinMode(pinA, OUTPUT);
       pinMode(pinB, OUTPUT);
       pinMode(pinC, INPUT);
-      
+
       digitalWrite(pinB, LOW);
       analogWrite(pinA, value);
       break;
@@ -175,15 +178,15 @@ void analogOn(byte led, byte value) {
       pinMode(pinA, INPUT);
       pinMode(pinB, OUTPUT);
       pinMode(pinC, OUTPUT);
-      
+
       digitalWrite(pinC, HIGH);
-      analogWrite(pinB, 255-value);
+      analogWrite(pinB, 255 - value);
       break;
     case 4:
       pinMode(pinA, INPUT);
       pinMode(pinB, OUTPUT);
       pinMode(pinC, OUTPUT);
-      
+
       digitalWrite(pinC, LOW);
       analogWrite(pinB, value);
       break;
@@ -191,49 +194,44 @@ void analogOn(byte led, byte value) {
       pinMode(pinA, OUTPUT);
       pinMode(pinB, INPUT);
       pinMode(pinC, OUTPUT);
-      
+
       digitalWrite(pinC, HIGH);
-      analogWrite(pinA, 255-value);
+      analogWrite(pinA, 255 - value);
       break;
     case 6:
       pinMode(pinA, OUTPUT);
       pinMode(pinB, INPUT);
       pinMode(pinC, OUTPUT);
-      
+
       digitalWrite(pinC, LOW);
       analogWrite(pinA, value);
       break;
   }
 }
 
-void checkPiezo() {
-  if(piezoCounter < piezoBufferSize) {
-    // Take a reading
-    int val = analogRead(piezoPin);
-    piezoValues[piezoCounter] = val;
-  } else {
-    // Find average
-    int avg = 0;
-    
-    for(int i=0; i<piezoBufferSize; i++)
-      avg += piezoValues[i];
-      
-    avg = avg/piezoBufferSize;
-    
-    if(avg >= piezoThreshold) {
-      for(int j=0; j<6; j++) {
-        for(int i=1; i<=6; i++) {
-          turnOn(i);
-          delay(50);
-          turnOff(i);
-          delay(50);
-        }
-      }
-    }
-    
-    // Reset counter
-    piezoCounter = 0;
+// Poll the "dance mode" triggers to find out if program state needs to change
+void checkDanceTriggers() {
+  // Fill up the buffer with readings
+  if (triggerCounter < triggerBufferSize) {
+    int val = analogRead(triggerPin);
+    triggerValues[triggerCounter] = val;
+    triggerCounter++;
+    return;
   }
-  
-  piezoCounter++;
+
+  // Once the buffer is full, find the average
+  int avg = 0;
+
+  for (int i = 0; i < triggerBufferSize; i++)
+    avg += triggerValues[i];
+
+  avg = avg / triggerBufferSize;
+
+  // If the average is above the threshold, initiate "dance mode" state
+  if (avg >= triggerThreshold) {
+    CURRENT_ACTION = DANCE;
+  }
+
+  // Reset counter
+  triggerCounter = 0;
 }
