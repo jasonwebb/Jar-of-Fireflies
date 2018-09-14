@@ -1,0 +1,12 @@
+Examples of sensors:
+- [Proximity/distance](https://www.sparkfun.com/categories/84) - thinking of IR rangefinders, but could also work for ultrasonic rangefinders
+- [Temperature](https://www.sparkfun.com/categories/82)
+- Tilt using mechanical sensor or accelerometer for hands-on manipulation
+- [Sound](https://www.sparkfun.com/categories/186)
+- [Flex or force](https://www.sparkfun.com/categories/143)
+- Biometrics
+  - [Muscle activity](https://www.sparkfun.com/products/13723)
+- Environmental
+  - [Soil moisture](https://www.sparkfun.com/products/13637)
+  - [pH level](https://www.sparkfun.com/products/10972)
+  - Various gas and chemical sensors ([LPG](https://www.sparkfun.com/products/9405), [particles](https://www.sparkfun.com/products/14045), [dissolved oxygen](https://www.sparkfun.com/products/11194), [more](https://www.sparkfun.com/categories/146)).
