@@ -12,7 +12,7 @@
 const byte pinA = 0;        // Physical pin 5 (PB0, MOSI, PWM)
 const byte pinB = 1;        // Physical pin 6 (PB1, MISO, PWM)
 const byte pinC = 2;        // Physical pin 7 (PB2, SCK, ADC1)
-const byte triggerPin = 4;  // Physical pin 3 (ADC2)
+const byte triggerPin = 4;  // Physical pin 3 (PB4, ADC2)
 
 // LED variables
 byte currentLED;        // Number of currently active LED (1-6)
