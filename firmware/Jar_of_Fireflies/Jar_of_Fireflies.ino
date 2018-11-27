@@ -12,7 +12,7 @@
 const byte pinA = 0;        // Physical pin 5 (PB0, MOSI, PWM)
 const byte pinB = 1;        // Physical pin 6 (PB1, MISO, PWM)
 const byte pinC = 2;        // Physical pin 7 (PB2, SCK, ADC1)
-const byte triggerPin = 4;  // Physical pin 3 (PB4, ADC2)
+const byte danceButtonPin = 4;  // Physical pin 3 (PB4, ADC2)
 
 // LED variables
 byte currentLED;        // Number of currently active LED (1-6)
@@ -23,10 +23,10 @@ byte numBlinks;         // Randomly generated value for number of times to flash
 int brightness;         // Current brightness (0-255) of currently active LED
 
 // "Dance mode" trigger variables
-const int triggerBufferSize = 10;      // Number of readings to store
-int triggerValues[triggerBufferSize];  // Last n values of triggers
-int triggerThreshold = 1;              // Minimum average value to trigger "dance mode"
-int triggerCounter = 0;                // Current index in buffer array, used when filling it with readings
+bool currentDanceButtonState = HIGH;
+bool previousDanceButtonState = HIGH;
+unsigned long lastDebounceTime = 0;
+unsigned long debounceInterval = 50;
 
 // Program states
 const byte BEGIN = 0;         // Sets up program for a new cycle
@@ -37,6 +37,9 @@ const byte DANCE = 4;         // Flashes LEDs in fun pattern
 byte CURRENT_ACTION = BEGIN;  // Start program off in BEGIN mode
 
 void setup() {
+  pinMode(danceButtonPin, INPUT);
+  digitalWrite(danceButtonPin, HIGH);
+
   turnOffAll();  // Flush any stray current from the ports
 }
 
@@ -123,18 +126,13 @@ void loop() {
         }
       }
 
-      // Clear the trigger value buffer so dance mode isn't immediately retriggered
-      for(int i = 0; i < triggerBufferSize; i++) {
-        triggerValues[i] = 0;
-      }
-
       CURRENT_ACTION = BEGIN;
 
       break;
   }
 
-  // Poll the "dance mode" triggers
-  checkDanceTriggers();
+  // Check if there has been any activity on the "dance" button
+  checkDanceButton();
 }
 
 // Turn on a single LED to full brightness
@@ -209,29 +207,22 @@ void analogOn(byte led, byte value) {
   }
 }
 
-// Poll the "dance mode" triggers to find out if program state needs to change
-void checkDanceTriggers() {
-  // Fill up the buffer with readings
-  if (triggerCounter < triggerBufferSize) {
-    int val = analogRead(triggerPin);
-    triggerValues[triggerCounter] = val;
-    triggerCounter++;
-    return;
+// Check if the "dance" button is pressed
+void checkDanceButton() {
+  // Reduce noise caused by button chatter by only polling periodically
+  if(lastDebounceTime + debounceInterval <= millis()) {
+    currentDanceButtonState = digitalRead(danceButtonPin);
+
+    // Change of button state detected
+    if(currentDanceButtonState != previousDanceButtonState) {
+      previousDanceButtonState = currentDanceButtonState;
+
+      // When button is pressed, hijack main loop to enter "dance" mode
+      if(currentDanceButtonState == LOW) {
+        CURRENT_ACTION = DANCE;
+      }
+    }
+
+    lastDebounceTime = millis();
   }
-
-  // Once the buffer is full, find the average
-  int avg = 0;
-
-  for (int i = 0; i < triggerBufferSize; i++)
-    avg += triggerValues[i];
-
-  avg = avg / triggerBufferSize;
-
-  // If the average is above the threshold, initiate "dance mode" state
-  if (avg >= triggerThreshold) {
-    CURRENT_ACTION = DANCE;
-  }
-
-  // Reset counter
-  triggerCounter = 0;
 }
