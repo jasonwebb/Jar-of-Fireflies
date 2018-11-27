@@ -37,8 +37,8 @@ const byte DANCE = 4;         // Flashes LEDs in fun pattern
 byte CURRENT_ACTION = BEGIN;  // Start program off in BEGIN mode
 
 void setup() {
-  pinMode(danceButtonPin, INPUT);
-  digitalWrite(danceButtonPin, HIGH);
+  pinMode(danceButtonPin, INPUT);      // Make button pin an INPUT
+  digitalWrite(danceButtonPin, HIGH);  // Activate internal pullup
 
   turnOffAll();  // Flush any stray current from the ports
 }
