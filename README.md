@@ -32,3 +32,9 @@ This means that you are completely free to use and modify any of these files for
 This license is chosen mainly in an effort, however naive, to discourage low-quality "knock offs" from flooding the market, which can lead to frustration and lack of trust in consumers caused by poor documentation, support, and quality assurance - a concern that tends to be unique to open-source hardware.
 
 I expressly and strongly approve of use of this project for conference badges/swag, soldering workshops, art projects, and other small-scale community and creative-oriented applications. Such applications are what motivate me to share these source files in the first place!
+
+## Designs
+
+![Schematic](https://raw.githubusercontent.com/jasonwebb/Jar-of-Fireflies/master/hardware/renders/Jar%20of%20Fireflies%20-%20schematic.png)
+
+![PCB layout](https://raw.githubusercontent.com/jasonwebb/Jar-of-Fireflies/master/hardware/renders/Jar%20of%20Fireflies%20-%20board.png)
