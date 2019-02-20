@@ -1,10 +1,10 @@
 ---
-WARNING: This project is currently being updated. The board designs need to be physically prototyped, and the current firmware sketch is not guaranteed to work correctly with the latest board design. Use with caution!
+WARNING: This project is currently being prototyped! Ping me if you'd like to build one and want to know the current status.
 ---
 
 # Jar of Fireflies
 
-Mason jar outfitted with LEDs and a small microcontroller programmed to mimic the behavior of fireflies caught on a warm summer night. A gentle tap on the glass catches the attention of a piezo element, startling the lights and causing them to rapidly flash for a moment before returning to their blissful natural state.
+Mason jar outfitted with LEDs and a small microcontroller programmed to mimic the behavior of fireflies caught on a warm summer night. A gentle tap of a button catches the attention of a lights, startling them and causing them to rapidly flash for a moment before returning to their blissful natural state.
 
 An external sensor interface enables more complex interactions using both analog and digital sensors for properties like temperature, sound, light, distance/proximity, movement, tilt, biometrics, and much more.
 
@@ -14,8 +14,7 @@ This is a modernized reinvention of the classic ["Jar of fireflies"](http://www.
 * ATTiny85 microcontroller programmed with Arduino using the [HLT bootloader](http://hlt.media.mit.edu/?p=1695), mounted in a DIP IC socket for easy removal and replacement.
 * Six charlieplexed through-hole LEDs, with the option to use SMD LEDs with fancy soldering.
 * Large plated hole pairs for alligator clips so multiple jars can be daisy-chained to a single power source.
-* Piezo sensor to detect tapping for interaction.
-* Tactile button as an alternative to the piezo sensor for interaction.
+* Tactile button to trigger an animation sequence ("dance mode").
 * 3-pin interface for external sensors (both analog and digital) to enable more complex interactions.
 * 2x3 pin ICSP interface for easier reprogramming.
 * Multiple power input options including:
